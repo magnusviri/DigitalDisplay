@@ -1,6 +1,6 @@
 # DigitalDisplay
 
-A WordPress template for an HTML based digital display (with a focus on higher education). Just point the digital display to a webpage (code for that not included)
+A WordPress template for an HTML based digital display (with a focus on higher education). Just point the digital display to a webpage (code for that not included).
 
 I'm writing these instructions some time after I set this all up so I don't exactly remember everything. Yeah, writing a WordPress theme was fun. Feels like doing the sheep thing. I was surprised how easy it was actually.
 
@@ -26,7 +26,7 @@ There's several custom fields. I expored them using Advanced Custom Fields -> Ex
 
 Settings
 
-* Edit your settings obviously, like WordPress Address, and Site Addreess.
+* Edit your settings obviously, like WordPress Address, and Site Address.
 
 Logo
 
