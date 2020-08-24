@@ -39,5 +39,4 @@ Footer messages
 
 Custom Fields
 
-* Before you import the custom fields, you should edit the data so that it looks the way you want.
-
+* Before you import the custom fields, you should edit the data so that it looks the way you want. There's a list of event types and a list of event locations. There's also an email in there that is displayed to people who edit the slides. That is so they can email whoever can edit the custom fields.

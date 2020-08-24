@@ -1,0 +1,129 @@
+/**
+Theme Name: Biomedia
+Author: James Reynolds
+**/
+
+/*
+ * DigitalDisplay
+ * github.com/magnsusviri/DigitalDisplay
+ * James Reynolds
+ *
+ * Copyright 2020, The University of Utah
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this
+ * software and associated documentation files (the "Software"), to deal in the Software
+ * without restriction, including without limitation the rights to use, copy, modify,
+ * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+body {
+    margin:0;
+    padding:0;
+	color:#ccc;
+	font-family: Sans-Serif;
+ 	text-align: center;
+    background-color: #222;
+}
+p {
+    margin:0;
+    padding:0;
+}
+#slide_content {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: black;
+	width: 1280px;
+	height: 720px;
+}
+#border {
+	width:1140px;
+	height:500px;
+    margin:35px;
+    padding:30px;
+	border:5px solid #ccc;
+}
+footer {
+	position: absolute;
+	top: 670px;
+	left: 0px;
+	font-size: 2em;
+ 	text-align: center;
+ 	width: 1280px;
+ 	background-color: black;
+ 	z-index: 200;
+}
+#footerMessageLeft {
+	width: 600px;
+ 	text-align: left;
+ 	float: left;
+	padding-left: 40px;
+}
+#footerMessageRight {
+	width: 600px;
+ 	text-align: right;
+	float: right;
+	padding-right: 40px;
+}
+#slide_content main table {
+	display: inline-block;
+}
+table, th, td {
+	border: 0px;
+	border-spacing: 0px;
+	padding: 10px;
+}
+th {
+	color:#ddd;
+	font-size: 3em;
+	font-family: Sans-Serif;
+	font-weight: normal;
+}
+td {
+	font-size: 1.8em;
+}
+tr:nth-child(odd) {
+    background-color: #000;
+}
+tr:nth-child(even) {
+    background-color: #222;
+}
+.right {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+.valign_middle {
+	vertical-align: middle;
+}
+.red {
+	color: #f55;
+}
+.grey {
+	color: #999;
+}
+.link {
+	color: #955;
+}
+.cropped_image_container {
+	position:absolute;
+	top: 40;
+	left: 820px;
+	z-index: 1;
+    width: 420px;
+    height: 560px;
+    overflow: hidden;
+}
