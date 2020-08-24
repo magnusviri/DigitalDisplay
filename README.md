@@ -4,9 +4,9 @@ A WordPress template for an HTML based digital display (with a focus on higher e
 
 I'm writing these instructions some time after I set this all up so I don't exactly remember everything. Yeah, writing a WordPress theme was fun. Feels like doing the sheep thing. I was surprised how easy it was actually.
 
-It works by having a front page that loads all eligible posts as slides displayed in a frame. After going through all posts once it reloads itself. So it must maintain an internet connection. It includes a mechanism for an list of events (derived from individual slides) and a custom academic calender page (with it's own table of events).
+It works by having a front page that loads all eligible posts as slides displayed in a frame. After going through all posts once it reloads itself. So it must maintain an internet connection. It includes a mechanism for a list of events (derived from individual slides) and a custom academic calender page (with it's own table of events).
 
-It's designed for 1280 x 720 display and is not responsive at all. If your display is a different resolution it will look completely wrong. The sizes are hard coded in the style.css and other php pages. They could be changed, yeah. Also, the (optional) footer takes up 120 pixels, so most pages are limited to 600 pixels height.
+It's designed for a 1280 x 720 display and is not responsive at all. If your display is a different resolution it will look completely wrong. The sizes are hard coded in the style.css and other php pages. They could be changed, yeah. Also, the (optional) footer takes up 120 pixels, so most pages are limited to 600 pixels height.
 
 ## Install
 

@@ -26,7 +26,7 @@
  */
 
 $rows = 8;
-$events_calendar1 = array();
+$calendar1 = array();
 if ( have_posts() ) {
 	$now = time();
 	while ( have_posts() ) {
@@ -84,7 +84,7 @@ if ( have_posts() ) {
 					$time = "$hour1$min1$ampm1";
 				}
 			}
-			array_push($events_calendar1,
+			array_push($calendar1,
 				[
 					'date' => $date,
 					'time' => $time,
@@ -96,17 +96,17 @@ if ( have_posts() ) {
 			);
 		}
 	}
-	usort($events_calendar2, 'sort_events_calendar');
+	usort($calendar1, 'sort_calendar');
 	$count = 0;
-	$events_calendar2 = array();
-	foreach ($events_calendar1 as $post_hash) {
+	$calendar2 = array();
+	foreach ($calendar1 as $post_hash) {
 		$count++;
 		if ( $count < $rows ) {
-			array_push($events_calendar2, $post_hash);
+			array_push($calendar2, $post_hash);
 		}
 	}
 }
-function sort_events_calendar($a, $b)
+function sort_calendar($a, $b)
 {
     return $a['end_date'] - $b['end_date'];
 }
@@ -116,26 +116,28 @@ function sort_events_calendar($a, $b)
 </head>
 <body>
 	<div id="slide_content">
-		<table>
-			<tr>
-				<th colspan="3">This Week's Events</th>
-			</tr>
-<?php foreach ($events_calendar2 as $post_hash) {?>
-			<tr>
-				<td class="center" style="width: 160px;">
-					<div class="red"><?php echo $post_hash['date'];?></div>
-					<div class="grey"><?php echo $post_hash['time'];?></div>
-				</td>
-				<td class="center">
-					<div class="grey"><?php echo $post_hash['location'];?></div>
-				</td>
-				<td>
-					<div class="red"><?php echo $post_hash['name'];?></div>
-					<div style="font-size: .9em"><?php echo $post_hash['title'];?></div>
-				</td>
-			</tr>
+		<main>
+			<table>
+				<tr>
+					<th colspan="3">This Week's Events</th>
+				</tr>
+<?php foreach ($calendar2 as $post_hash) {?>
+				<tr>
+					<td class="center" style="width: 160px;">
+						<div class="red"><?php echo $post_hash['date'];?></div>
+						<div class="grey"><?php echo $post_hash['time'];?></div>
+					</td>
+					<td class="center">
+						<div class="grey"><?php echo $post_hash['location'];?></div>
+					</td>
+					<td>
+						<div class="red"><?php echo $post_hash['name'];?></div>
+						<div style="font-size: .9em"><?php echo $post_hash['title'];?></div>
+					</td>
+				</tr>
 <?php }?>
-		</table>
+			</table>
+		</main>
 <?php echo footer($show_footer_messages)?>
 	</div>
 </body>

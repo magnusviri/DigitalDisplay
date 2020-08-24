@@ -26,8 +26,8 @@
  */
 
 $rows = 10;
-$academic_calendar1 = array();
-if( have_posts() ) {
+$calendar1 = array();
+if ( have_posts() ) {
 	$now = time();
 	while ( have_posts() ) {
 		the_post();
@@ -40,7 +40,7 @@ if( have_posts() ) {
 			} else {
 				$date_text = date('D, M j',$end_date);
 			}
-			array_push($academic_calendar1,
+			array_push($calendar1,
 				[
 					'end_date' => $end_date,
 					'date_text' => $date_text,
@@ -49,17 +49,17 @@ if( have_posts() ) {
 			);
 		}
 	}
-	usort($academic_calendar1, 'sort_academic_calendar');
+	usort($calendar1, 'sort_calendar');
 	$count = 0;
-	$academic_calendar2 = array();
-	foreach ($academic_calendar1 as $post_hash) {
+	$calendar2 = array();
+	foreach ($calendar1 as $post_hash) {
 		$count++;
 		if ( $count < $rows ) {
-			array_push($academic_calendar2, $post_hash);
+			array_push($calendar2, $post_hash);
 		}
 	}
 }
-function sort_academic_calendar($a, $b)
+function sort_calendar($a, $b)
 {
     return $a['end_date'] - $b['end_date'];
 }
@@ -74,16 +74,15 @@ function sort_academic_calendar($a, $b)
 				<tr>
 					<th colspan="2">Academic Calendar</th>
 				</tr>
-<?php foreach ($academic_calendar2 as $post_hash) {?>
+<?php foreach ($calendar2 as $post_hash) {?>
 				<tr>
 					<td class="red right"><?php echo $post_hash['date_text']?></td>
 					<td><?php echo $post_hash['title'];?></td>
 				</tr>
 <?php }?>
 			</table>
-		<main>
+		</main>
 <?php echo footer($show_footer_messages)?>
 	</div>
 </body>
 </html>
-
