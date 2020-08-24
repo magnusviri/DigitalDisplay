@@ -12,7 +12,7 @@ It's designed for 1280 x 720 display and is not responsive at all. If your displ
 
 Install WordPress and everything it needs.
 
-Put this in /path/to/wp-content/themes/DigitalDisplay
+Put "DigitalDisplay" in /path/to/wp-content/themes/. So you should have /path/to/wp-content/themes/DigitalDisplay/index.php and all the other files.
 
 This requires the following Plug-ins (ok, maybe it doesn't require all of them, but the plug-ins make it easier).
 
