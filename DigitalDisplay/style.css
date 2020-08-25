@@ -29,16 +29,16 @@ Author: James Reynolds
  */
 
 body {
-    margin:0;
-    padding:0;
+	margin:0;
+	padding:0;
 	color:#ccc;
 	font-family: Sans-Serif;
- 	text-align: center;
-    background-color: #222;
+	text-align: center;
+	background-color: #222;
 }
 p {
-    margin:0;
-    padding:0;
+	margin:0;
+	padding:0;
 }
 #slide_content {
 	position: absolute;
@@ -51,8 +51,8 @@ p {
 #border {
 	width:1140px;
 	height:500px;
-    margin:35px;
-    padding:30px;
+	margin:35px;
+	padding:30px;
 	border:5px solid #ccc;
 }
 footer {
@@ -60,20 +60,20 @@ footer {
 	top: 670px;
 	left: 0px;
 	font-size: 2em;
- 	text-align: center;
- 	width: 1280px;
- 	background-color: black;
- 	z-index: 200;
+	text-align: center;
+	width: 1280px;
+	background-color: black;
+	z-index: 200;
 }
 #footerMessageLeft {
 	width: 600px;
- 	text-align: left;
- 	float: left;
+	text-align: left;
+	float: left;
 	padding-left: 40px;
 }
 #footerMessageRight {
 	width: 600px;
- 	text-align: right;
+	text-align: right;
 	float: right;
 	padding-right: 40px;
 }
@@ -95,10 +95,10 @@ td {
 	font-size: 1.8em;
 }
 tr:nth-child(odd) {
-    background-color: #000;
+	background-color: #000;
 }
 tr:nth-child(even) {
-    background-color: #222;
+	background-color: #222;
 }
 .right {
 	text-align: right;
@@ -123,7 +123,7 @@ tr:nth-child(even) {
 	top: 40;
 	left: 820px;
 	z-index: 1;
-    width: 420px;
-    height: 560px;
-    overflow: hidden;
+	width: 420px;
+	height: 560px;
+	overflow: hidden;
 }

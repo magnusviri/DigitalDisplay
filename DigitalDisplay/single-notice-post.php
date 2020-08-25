@@ -55,18 +55,18 @@ endif;
 	<?php echo head_text('Notice')?>
 <style>
 #left_box {
-    display: table-cell;
-    width: <?php echo $left_box_width;?>px;
+	display: table-cell;
+	width: <?php echo $left_box_width;?>px;
 }
 #right_box {
-    display: <?php echo $center_box_display;?>;
-    width: <?php echo $left_box_width;?>px;
+	display: <?php echo $center_box_display;?>;
+	width: <?php echo $left_box_width;?>px;
 }
 <?php if ( $cropped_image['url'] ): ?>
 .cropped_image {
-    height: 520px;
-    margin: 20px 20px 20px 20px;
-    background: url('<?php echo $cropped_image["url"];?>') no-repeat center center;
+	height: 520px;
+	margin: 20px 20px 20px 20px;
+	background: url('<?php echo $cropped_image["url"];?>') no-repeat center center;
 }
 <?php endif;?>
 </style>

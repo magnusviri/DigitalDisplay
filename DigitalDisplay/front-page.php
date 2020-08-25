@@ -43,11 +43,11 @@ if ( have_posts() ) {
 			$start_date = strtotime(get_field('start_date'));
 			$end_date = strtotime(get_field('end_date'));
 			if (
-			  ( ! $start_date and ! $end_date ) or
-			  ( ! $start_date and $now <= $end_date ) or
-			  ( $start_date <= $now and ! $end_date ) or
-			  ( $start_date <= $now and $now <= $end_date )
-			  ) {
+				( ! $start_date and ! $end_date ) or
+				( ! $start_date and $now <= $end_date ) or
+				( $start_date <= $now and ! $end_date ) or
+				( $start_date <= $now and $now <= $end_date )
+			   ) {
 				$the_url = preg_replace("/\/events-calendar\//", "/category/events-calendar/", $the_url);
 				if ( $debug ) {
 					print "Y " . $the_url . " - \"" . $category_hash->name . "\" == \"Slide\", $start_date < $now < $end_date.</br>";
@@ -78,14 +78,29 @@ body {
 	background: black;
 	color:#ccc;
 	font-family: Sans-Serif;
-    height:100%;
-    margin:0;
-    padding:0;
+	height:100%;
+	margin:0;
+	padding:0;
 }
 iframe {
+	pointer-events: none;
 	border:0px solid #ffffff;
-    height:100%;
-    width:100%;
+	height:100%;
+	width:100%;
+}
+div.left {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:720px;
+	width:640px;
+}
+div.right {
+	position:absolute;
+	top:0px;
+	left:640px;
+	height:720px;
+	width:640px;
 }
 </style>
 
@@ -101,20 +116,32 @@ var urlList = [
 
 no_cache_workaround = false;
 
-function timeoutFunction(element_name, urlList, slideIndex, lastCount) {
-	if ( urlList.length != lastCount ) {
-	 	slideIndex = -1;
-	 	lastCount = urlList.length;
+function changeSlide(modifier) {
+	if ( lastTimer ) {
+		clearTimeout(lastTimer);
+		timeoutFunction(modifier);
 	}
-	slideIndex++;
-	if ( slideIndex >= urlList.length ) {
-		var oldURL = window.location.pathname;
-		if ( no_cache_workaround ) {
-			var now = new Date()
-			oldURL.replace(/\?.*/, "").replace(/^(.*)$/, "[$1]" );
-			window.location.href = oldURL + '?nocache=' + now.getTime();
-		} else {
-			window.location.href = oldURL;
+}
+
+function timeoutFunction(modifier) {
+	if ( urlList.length != lastCount ) {
+		slideIndex = -1;
+		lastCount = urlList.length;
+	}
+	slideIndex += modifier;
+	if ( slideIndex < 0 ) {
+		slideIndex = urlList.length-1;
+	} else if ( slideIndex >= urlList.length ) {
+		slideIndex = 0;
+		if ( reload ) {
+			var oldURL = window.location.pathname;
+			if ( no_cache_workaround ) {
+				var now = new Date()
+				oldURL.replace(/\?.*/, "").replace(/^(.*)$/, "[$1]" );
+				window.location.href = oldURL + '?nocache=' + now.getTime();
+			} else {
+				window.location.href = oldURL;
+			}
 		}
 	}
 	currentIndex = slideIndex % urlList.length;
@@ -127,17 +154,25 @@ function timeoutFunction(element_name, urlList, slideIndex, lastCount) {
 		var currentTime = urlList[currentIndex].duration;
 		document.getElementById(element_name).src = currentURL;
 		document.getElementById(element_name).onload = function (e) {
-			setTimeout('timeoutFunction("' + element_name + '", urlList, "' + slideIndex + '", "' + lastCount + '")', currentTime*1000);
+			lastTimer = setTimeout('timeoutFunction(1)', currentTime*1000);
 		}
 	}
+// 	console.log(element_name, urlList, slideIndex, lastCount)
 }
 
 </script>
 </head>
 <body>
-<iframe name="events" id="events" src=""></iframe>
+<div class="left" onclick="changeSlide(-1)"></div>
+<div class="right" onclick="changeSlide(1)"></div>
+<iframe name="slides" id="slides" src=""></iframe>
 <script type="text/javascript">
-timeoutFunction("events",urlList,-1,-1)
+element_name = "slides";
+slideIndex = -1;
+lastCount = -1;
+reload = true;
+lastTimer = null;
+timeoutFunction(1);
 </script>
 </body>
 </html>

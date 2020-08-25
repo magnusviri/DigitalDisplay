@@ -93,7 +93,7 @@ if( have_posts() ):
 						$datetime = "$date1, $time1 - $time2";
 					}
 				} else {
-					$datetime =  "$date1";
+					$datetime = "$date1";
 				}
 			} else {
 				if ( $display_event_time == "Yes" ) {
@@ -119,8 +119,8 @@ endif;
 .content {
 	width:1140px;
 	height:500px;
-    margin:35px;
-    padding:30px;
+	margin:35px;
+	padding:30px;
 	border:5px solid white;
 	text-align:center;
 }
@@ -136,32 +136,32 @@ endif;
 }
 
 #left_box {
-    display: table-cell;
-    vertical-align: middle;
-    width: <?php echo $left_box_width;?>%;
-    padding:10px;
+	display: table-cell;
+	vertical-align: middle;
+	width: <?php echo $left_box_width;?>%;
+	padding:10px;
 }
 #center_box {
-    display: <?php echo $center_box_display;?>;
-    vertical-align: middle;
-    width: <?php echo $center_box_width;?>%;
-    padding:10px;
+	display: <?php echo $center_box_display;?>;
+	vertical-align: middle;
+	width: <?php echo $center_box_width;?>%;
+	padding:10px;
 }
 #right_box {
-    display: <?php echo $right_box_display;?>;
-    vertical-align: middle;
-    width: <?php echo $right_box_width;?>%;
-    padding:10px;
+	display: <?php echo $right_box_display;?>;
+	vertical-align: middle;
+	width: <?php echo $right_box_width;?>%;
+	padding:10px;
 }
 #footer_box {
-    vertical-align: middle;
+	vertical-align: middle;
 	width:<?php echo $content_width;?>px;
 }
 <?php if ( $cropped_image['url'] ): ?>
 .cropped_image {
-    height: 520px;
-    margin: 20px 20px 20px 20px;
-    background: url('<?php echo $cropped_image["url"];?>') no-repeat center center;
+	height: 520px;
+	margin: 20px 20px 20px 20px;
+	background: url('<?php echo $cropped_image["url"];?>') no-repeat center center;
 }
 <?php endif;?>
 </style>

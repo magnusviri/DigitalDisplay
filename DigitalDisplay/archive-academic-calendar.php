@@ -61,7 +61,7 @@ if ( have_posts() ) {
 }
 function sort_calendar($a, $b)
 {
-    return $a['end_date'] - $b['end_date'];
+	return $a['end_date'] - $b['end_date'];
 }
 ?><html>
 <head>
